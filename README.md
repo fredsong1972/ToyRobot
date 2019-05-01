@@ -86,14 +86,13 @@ Expected output
 - Download the code from github
 - You can build and run this app from Visual Studio 2017, 2019 or from Command Line
 	- From Visual Studio
-		Open the solution file from Visual Studio 2017.
-		Build and Run
+		- Open the solution file from Visual Studio 2017.
+		- Build and Run
 	- From command line
-		Go to the solution folder
-			dotnet build
-			dotnet run -p toyrobot
-			or
-			go to toyrobot\bin\Debug\netcoreapp2.2 folder
-				dotnet toyrobot.dll
+		- Go to the solution folder
+			- dotnet build
+			- dotnet run -p toyrobot
+			- or go to toyrobot\bin\Debug\netcoreapp2.2 folder
+				- dotnet toyrobot.dll
   
   
