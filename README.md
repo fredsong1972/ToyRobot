@@ -84,12 +84,16 @@ Expected output
 - The Application is .net core 2.2 console app.
 - Download and install .net core 2.2 from https://dotnet.microsoft.com/download/dotnet-core/2.2
 - Download the code from github
-- Open the solution from VS2017 or VS2019, rebuild and run
-- Or you can build and run from command line
-  dotnet build
-  dotnet run -p toyrobot
-  or
-  go to bin\Debug\netcoreapp2.2 folder
-  dotnet toyrobot.dll
+- You can build and run this app from Visual Studio 2017, 2019 or from Command Line
+	- From Visual Studio
+		Open the solution file from Visual Studio 2017.
+		Build and Run
+	- From command line
+		Go to the solution folder
+			dotnet build
+			dotnet run -p toyrobot
+			or
+			go to toyrobot\bin\Debug\netcoreapp2.2 folder
+				dotnet toyrobot.dll
   
   
