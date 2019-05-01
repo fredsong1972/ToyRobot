@@ -36,6 +36,7 @@ namespace ToyRobot.Services
         public void Run(string text)
         {
             var command = _commandFactory.Parse(text);
+            // skipped if command not parsed properly
             if (command != null)
                 RunCommand(command);
         }
@@ -46,6 +47,7 @@ namespace ToyRobot.Services
         /// <param name="command"></param>
         private void RunCommand(ICommand command)
         {
+            // Discard all commands in the sequence until a valid PLACE command has been executed.
             if (!_robot.Placed && command.Action != Action.PLACE)
                 return;
             switch (command.Action)
@@ -89,6 +91,7 @@ namespace ToyRobot.Services
         /// <param name="facing"></param>
         private void Place(int x, int y, Direction facing)
         {
+            // Any place that would cause the robot to fall must be ignored.
             if (!ValidatePosition(x, y))
                 return;
             _robot.XPosition = x;
@@ -118,7 +121,7 @@ namespace ToyRobot.Services
                     x--;
                     break;
             }
-
+            // Any move that would cause the robot to fall must be ignored.
             if (ValidatePosition(x, y))
             {
                 _robot.XPosition = x;

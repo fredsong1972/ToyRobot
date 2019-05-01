@@ -14,6 +14,7 @@ namespace ToyRobot
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
+            // get robot service instance from service provider
             var robotService = serviceProvider.GetService<IRobotService>();
 
             Console.CancelKeyPress += delegate(object sender, ConsoleCancelEventArgs e)

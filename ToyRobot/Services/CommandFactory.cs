@@ -16,6 +16,7 @@ namespace ToyRobot.Services
         /// <returns></returns>
         public Command Parse(string text)
         {
+            // NUll, Empty or WhiteSpace igonred
             if (string.IsNullOrWhiteSpace(text))
                 return null;
             string commandText = text.ToUpper().Trim();
@@ -35,8 +36,7 @@ namespace ToyRobot.Services
                         return null;
                     if (!Int32.TryParse(parts[2], out int yPosition))
                         return null;
-                    Direction facing;
-                    if (!Enum.TryParse(parts[3], false, out facing))
+                   if (!Enum.TryParse(parts[3], false, out Direction facing))
                         return null;
                     command = new Command { Action = Action.PLACE, XPosition = xPosition, YPosition = yPosition, Facing = facing};
                         break;
